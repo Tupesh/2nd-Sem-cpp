@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    fstream my_file;
+    my_file.open("my_file.txt", ios::in);
+    if (!my_file)
+    {
+        cout << "File bhetena hai hajur....";
+    }
+    else
+    {
+        char ch;
+        while (1)
+        {
+            my_file >> ch;
+            if (my_file.eof())
+            {
+                break;
+            }
+            cout << ch;
+        }
+    }
+    my_file.close();
+    return 0;
+}
+
+
+// Demonstrate create, open, write and read operation on a file in C++.
